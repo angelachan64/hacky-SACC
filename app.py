@@ -8,7 +8,9 @@ app = Flask(__name__)
 def home():
 	if request.method == "POST":
 		results=request.form['query']
-    	return render_template("home.html", results=results)
+		return render_template("home.html", results=results)
+	else:
+		return render_template("home.html")
 
 @app.route("/results")
 def results():

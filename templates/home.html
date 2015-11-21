@@ -3,16 +3,21 @@
 {% block contents %}
 
 <div class="container">
-	<form action="" method="POST">
+	<center>
+	<h1>Search</h1>
+	<div class="col-md-6">
 		<div class="input-group">
-	  		<input type="text" name="query" placeholder="Search Bar"></input> 
+			<form action="" method="POST">
+	  			<input type="text" name="query" class="form-control" placeholder="Search Bar"></input> 
+	  		</form>
 	  		<div class="input-group-btn">
 	  			<button class="btn btn-info" type="submit" value={{ID}} name="search">
 	  				<span class="glyphicon glyphicon-search"></span>
 	  			</button>
 	  		</div>
 	  	</div>
-	</form>
+	</div>
+	</center>
 </div>
 
 <!--
@@ -27,7 +32,8 @@
 	      </div>
 	    </form>
 -->
-
+<!--
 {{ results }}
+-->
 
 {% endblock %}
