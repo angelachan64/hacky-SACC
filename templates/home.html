@@ -2,6 +2,32 @@
 
 {% block contents %}
 
+<div class="container">
+	<form action="" method="POST">
+		<div class="input-group">
+	  		<input type="text" name="query" placeholder="Search Bar"></input> 
+	  		<div class="input-group-btn">
+	  			<button class="btn btn-info" type="submit" value={{ID}} name="search">
+	  				<span class="glyphicon glyphicon-search"></span>
+	  			</button>
+	  		</div>
+	  	</div>
+	</form>
+</div>
+
+<!--
+ <form action="" class="navbar-form navbar-right" method="POST">
+	      <div class="input-group">
+		<input type="Search" name="query" placeholder="Search..." class="form-control" />
+		<div class="input-group-btn">
+		  <button class="btn btn-info" name="search">
+		    <span class="glyphicon glyphicon-search"></span>
+		  </button>
+		</div>
+	      </div>
+	    </form>
+-->
+
 {{ results }}
 
 {% endblock %}
