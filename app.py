@@ -1,5 +1,5 @@
 from flask import Flask, render_template,redirect, request, session, url_for
-import urllib2, json
+import urllib2, json, google, bs4, re
 
 app = Flask(__name__)
 
@@ -7,7 +7,17 @@ app = Flask(__name__)
 @app.route("/home")
 def home():
 	if request.method == "POST":
-		results=request.form['query']
+		q = request.form['query']
+		results = google.search(q, num=10, start=0, stop=10)
+		rlist = []
+		for r in results:
+		    rlist.append(r)
+
+		url = urllib2.urlopen(rlist[0])
+		page = url.read()
+		soup = bs4.BeautifulSoup(page,'lxml')
+		raw = soup.get_text()
+		text = re.sub("[ \t\n]+"," ",raw)
 		return render_template("home.html", results=results)
 	else:
 		return render_template("home.html")
