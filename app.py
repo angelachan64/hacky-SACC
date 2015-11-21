@@ -17,7 +17,9 @@ def home():
 		page = url.read()
 		soup = bs4.BeautifulSoup(page,'lxml')
 		raw = soup.get_text()
-		text = re.sub("[ \t\n]+"," ",raw)
+		#text = re.sub("[ \t\n]+"," ",raw)
+		text = raw
+		#print text
 		return render_template("home.html", results=results)
 	else:
 		return render_template("home.html")
