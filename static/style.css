@@ -169,22 +169,22 @@
   -webkit-animation-name: cf4FadeInOut;
   -webkit-animation-timing-function: ease-in-out;
   -webkit-animation-iteration-count: infinite;
-  -webkit-animation-duration: 8s;
+  -webkit-animation-duration: 12s;
 
   -moz-animation-name: cf4FadeInOut;
   -moz-animation-timing-function: ease-in-out;
   -moz-animation-iteration-count: infinite;
-  -moz-animation-duration: 8s;
+  -moz-animation-duration: 12s;
 
   -o-animation-name: cf4FadeInOut;
   -o-animation-timing-function: ease-in-out;
   -o-animation-iteration-count: infinite;
-  -o-animation-duration: 8s;
+  -o-animation-duration: 12s;
 
   animation-name: cf4FadeInOut;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
-  animation-duration: 8s;
+  animation-duration: 12s;
 }
 #cf4a img:nth-of-type(1) {
   animation-delay: 10s;
