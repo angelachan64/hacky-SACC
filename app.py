@@ -6,12 +6,12 @@ app = Flask(__name__)
 @app.route("/", methods=['GET', 'POST'])
 @app.route("/home", methods=['GET', 'POST'])
 def home():
-	if request.method == "POST":
-		q = request.form['query']
+    if request.method == "POST":
+        q = request.form['query']
         results = google.search(q, num=10, start=0, stop=10)
         rlist = []
         for r in results:
-		    rlist.append(r)
+            rlist.append(r)
         url = urllib2.urlopen(rlist[0])
         page = url.read()
         soup = bs4.BeautifulSoup(page,'html5lib')
