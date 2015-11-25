@@ -3,8 +3,8 @@ import urllib2, json, google, bs4, re
 
 app = Flask(__name__)
 
-@app.route("/", methods=['GET', 'POST'])
-@app.route("/home", methods=['GET', 'POST'])
+@app.route("/", methods=['GET','POST'])
+@app.route("/home", methods=['GET','POST'])
 def home():
     if request.method == "POST":
         q = request.form['query']
@@ -35,3 +35,4 @@ if __name__ == "__main__":
    app.debug = True
    app.secret_key = "shh"
    app.run(host="0.0.0.0", port=8000)
+
