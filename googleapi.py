@@ -73,6 +73,31 @@ def findname(question):
     #    print (word)
     return  withcap
 
+def questiontype(question):
+    """
+    Return a list of question words given a string of text
+
+    Arguments:
+      question: A string of text
+
+    Returns:
+      An empty list or a list of valid question words
+
+    >>> questiontype("")
+    []
+
+    >>> questiontype("Who is Angela")
+    ['Who']
+    
+    """
+    questionlist = []
+    types = ['who', 'what', 'where', 'when', 'why', 'how']
+    for word in question.split():
+        if word in types:
+            questionlist.append(word)
+    return questionlist
+
+
 if __name__=="__main__":
     import doctest
     doctest.testmod()
