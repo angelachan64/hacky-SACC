@@ -48,6 +48,12 @@ def findname(question):
 
     >>> findname("Angela not Serena")
     ['Angela']
+
+    >>> findname("Angela and Serena not Zamansky")
+    ['Angela', 'Serena']
+
+    >>> findname("Angela , Serena and Zamansky")
+    ['Angela', 'Serena', 'Zamansky']
     """
     wordlist = []
     hold = []
@@ -59,7 +65,7 @@ def findname(question):
                 hold.append(word)
                 held = True
         else:
-            if not word.islower():
+            if not word.islower() and word != ",":
                 hold.append(" ")
                 hold.append(word)
                 temp = ''.join(hold)
@@ -73,7 +79,7 @@ def findname(question):
                 hold = []
                 held = False
                 temp = ""
-                if not word.lower() == "and":
+                if not word.lower() == "and" and not word.lower() == ",":
                     break
     if held:
         temp = ''.join(hold)
