@@ -43,8 +43,10 @@ def findname(question):
 
     >>> findname("Angela Serena hello")
     ['Angela Serena']
-    """
 
+    >>> findname("Angela not Serena")
+    ['Angela']
+    """
     wordlist = []
     hold = []
     temp = ""
@@ -69,22 +71,13 @@ def findname(question):
                 hold = []
                 held = False
                 temp = ""
+                if not word.lower() == "and":
+                    break
     if held:
         temp = ''.join(hold)
         wordlist.append(temp)
     return wordlist
-                
-    #withcap = []
-    #without = []
-    #for word in question.split():
-    #    if word.islower():
-    #        without.append(word)
-    #    else:
-    #        withcap.append(word)
-    #onelist = withcap + without
-    #for word in onelist:
-    #    print (word)
-    #return  withcap
+
 
 def questiontype(question):
     """
@@ -120,11 +113,6 @@ def questiontype(question):
             return ""
     else:
         return ""
-
-    # for word in question.split():
-    #     if word in types:
-    #         questionlist.append(word)
-    # return questionlist
 
 
 if __name__=="__main__":
