@@ -88,7 +88,7 @@ def findname(question):
 
 def questiontype(question):
     """
-    Return a list of question words given a string of text
+    Return the question word given a string of text
 
     Arguments:
       question: A string of text
@@ -97,18 +97,34 @@ def questiontype(question):
       An empty list or a list of valid question words
 
     >>> questiontype("")
-    []
+    ''
 
     >>> questiontype("Who is Angela")
-    ['Who']
+    'Who'
     
+    >>> questiontype("Hubbada hubba whee")
+    ''
+
+    >>> questiontype("Who what Where When Why?")
+    'Who'
+
+    >>> questiontype("who is Serena??")
+    'who'
     """
-    questionlist = []
     types = ['who', 'what', 'where', 'when', 'why', 'how']
-    for word in question.split():
-        if word in types:
-            questionlist.append(word)
-    return questionlist
+    wlist = question.split()
+    if wlist:
+        if wlist[0].lower() in types:
+            return wlist[0]
+        else:
+            return ""
+    else:
+        return ""
+
+    # for word in question.split():
+    #     if word in types:
+    #         questionlist.append(word)
+    # return questionlist
 
 
 if __name__=="__main__":
