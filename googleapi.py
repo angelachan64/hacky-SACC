@@ -15,7 +15,9 @@ def search(question):
 
 def findname(question):
     """
-    Return a list of valid names (first, last, or both) given a string of text
+    Return a list of valid names (first, last, or both) given a string of text.
+    If two names are connected by and, it will return both. Otherwise, it will
+    return the first name in the string.
 
     Arguments:
       question: A string of text
