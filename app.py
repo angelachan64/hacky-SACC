@@ -16,7 +16,7 @@ def home():
         hlist = []
         for r in range(10):
             hlist.append(googleapi.getHTML(rlist[r]));
-        return render_template("home.html", query=q, results=rlist, htmls=hlist)
+        return render_template("home.html", query=q, results=rlist)
     else:
         return render_template("home.html")
     
