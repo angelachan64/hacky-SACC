@@ -16,33 +16,21 @@ def findname(question):
     []
 
     >>> findname("Angela stuff")
-    ['Angela']
+    []
     
-    >>> findname("stuff Serena stuff")
-    ['Serena']
+    >>> findname("stuff Serena Chan stuff")
+    [('Serena', 'Chan')]
 
-    >>> findname("Angela and Serena")
-    ['Angela', 'Serena']
+    >>> findname("Angela Chan and Serena Chan")
+    [('Angela', 'Chan'), ('Serena', 'Chan')]
 
-    >>> findname("Angela and Serena stuff")
-    ['Angela', 'Serena']
+    >>> findname("Angela Chan Serena Chan")
+    [('Angela', 'Chan'), ('Serena', 'Chan')]
 
-    >>> findname("Angela Serena")
-    ['Angela Serena']
-
-    >>> findname("Angela Serena hello")
-    ['Angela Serena']
-
-    >>> findname("Angela not Serena")
-    ['Angela']
-
-    >>> findname("Angela and Serena not Zamansky")
-    ['Angela', 'Serena']
-
-    >>> findname("Angela , Serena and Zamansky")
-    ['Angela', 'Serena', 'Zamansky']
+    >>> findname("Angela Chan Serena Chan Mike Zamansky")
+    [('Angela', 'Chan'), ('Serena', 'Chan'), ('Mike', 'Zamansky')]
     """
-        pattern = "[A-Z]([a-z]+|\.)(?:\s+[A-Z]([a-z]+|\.))*(?:\s+[a-z][a-z\-]+){0,2}\s+[A-Z]([a-z]+|\.)"
+        pattern = "([A-Z][a-z]*)[\s-]([A-Z][a-z]*)"
         person = re.findall(pattern, question)
         return person
 
