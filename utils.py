@@ -1,7 +1,7 @@
 import re
 
 def findname(question):
-	"""
+        """
     Return a list of valid names (first, last, or both) given a string of text.
     If two names are connected by and, it will return both. Otherwise, it will
     return the first name in the string.
@@ -42,8 +42,9 @@ def findname(question):
     >>> findname("Angela , Serena and Zamansky")
     ['Angela', 'Serena', 'Zamansky']
     """
-	regex = [A-Z]([a-z]+|\.)(?:\s+[A-Z]([a-z]+|\.))*(?:\s+[a-z][a-z\-]+){0,2}\s+[A-Z]([a-z]+|\.)
-	person = re.findall(pattern, line)
+        pattern = "[A-Z]([a-z]+|\.)(?:\s+[A-Z]([a-z]+|\.))*(?:\s+[a-z][a-z\-]+){0,2}\s+[A-Z]([a-z]+|\.)"
+        person = re.findall(pattern, question)
+        return person
 
 
 if __name__=="__main__":

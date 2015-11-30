@@ -36,10 +36,17 @@
       </button>
     </div>
   </div>
+  <br>
+  <br>
+  {% if results %}
+  {{ results }}
+  {% for posts in results %}
+  {{ print(post) }}
+  {% endfor %}
+  {% endif %}
 </div>
 
-<!--
-{{ results }}
--->
+
+
 
 {% endblock %}

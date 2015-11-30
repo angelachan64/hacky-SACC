@@ -122,7 +122,6 @@ def questiontype(question):
     else:
         return ""
 
-
 if __name__=="__main__":
     import doctest
     doctest.testmod()
