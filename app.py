@@ -11,12 +11,25 @@ def home():
         q = request.form['query']
         results = google.search(q, num=10, start=0, stop=10)
         rlist = []
+<<<<<<< HEAD
         for r in range(10):
             rlist.append(results.next())
         hlist = []
         for r in range(10):
             hlist.append(googleapi.getHTML(rlist[r]));
         return render_template("home.html", query=q, results=rlist)
+=======
+        for r in results:
+            rlist.append(r)
+        url = urllib2.urlopen(rlist[0])
+        page = url.read()
+        soup = bs4.BeautifulSoup(page,'html5lib')
+        raw = soup.get_text()
+        #text = re.sub("[ \t\n]+"," ",raw)
+        text = raw
+        #print text
+        return render_template("home.html", query=q, results=results)
+>>>>>>> master
     else:
         return render_template("home.html")
     
@@ -32,4 +45,3 @@ if __name__ == "__main__":
    app.debug = True
    app.secret_key = "shh"
    app.run(host="0.0.0.0", port=8000)
-
