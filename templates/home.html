@@ -42,8 +42,9 @@
   <h3>You asked, "{{query}}"</h3>
   {% for i in range(10) %}
   <br>
-  {{ results[i] }}
-  {{ htmls[i] }}
+  <a href="{{ results[i] }}">
+    Result {{ i+1 }}
+  </a>
   <br>
   {% endfor %}
   {% endif %}
