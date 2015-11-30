@@ -1,5 +1,6 @@
 from flask import Flask, render_template,redirect, request, session, url_for
 import urllib2, json, google, bs4, re
+import googleapi
 
 app = Flask(__name__)
 
@@ -10,6 +11,14 @@ def home():
         q = request.form['query']
         results = google.search(q, num=10, start=0, stop=10)
         rlist = []
+<<<<<<< HEAD
+        for r in range(10):
+            rlist.append(results.next())
+        hlist = []
+        for r in range(10):
+            hlist.append(googleapi.getHTML(rlist[r]));
+        return render_template("home.html", query=q, results=rlist)
+=======
         for r in results:
             rlist.append(r)
         url = urllib2.urlopen(rlist[0])
@@ -20,6 +29,7 @@ def home():
         text = raw
         #print text
         return render_template("home.html", query=q, results=results)
+>>>>>>> master
     else:
         return render_template("home.html")
     
