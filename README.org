@@ -1,0 +1,11 @@
+* hacky-SACC
+Now with people instead of beans!
+
+** Who created hacky-SACC?
+| The Team    | Role      |
+|-------------|-----------|
+| Angela Chan | Teamwork! |
+| Serena Chan | Teamwork! |
+
+** What is hacky-SACC?
+Hacky-SACC is a search engine that uses google search to find the top ten results on a person of your choosing .Find out about anyone, anywhere, at any time.
