@@ -39,9 +39,12 @@
   <br>
   <br>
   {% if results %}
-  {{ results }}
-  {% for posts in results %}
-  {{ print(post) }}
+  <h3>You asked, "{{query}}"</h3>
+  {% for i in range(10) %}
+  <br>
+  {{ results[i] }}
+  {{ htmls[i] }}
+  <br>
   {% endfor %}
   {% endif %}
 </div>

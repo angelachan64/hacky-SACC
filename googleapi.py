@@ -1,4 +1,4 @@
-import re
+import re, urllib2, bs4, google
 
 
 def search(question):
@@ -121,6 +121,13 @@ def questiontype(question):
             return ""
     else:
         return ""
+
+def getHTML(url):
+    url = urllib2.urlopen(url)
+    page = url.read()
+    soup = bs4.BeautifulSoup(page, 'html5lib')
+    raw = soup.get_text()
+    return raw;
 
 if __name__=="__main__":
     import doctest
